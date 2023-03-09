@@ -5,8 +5,7 @@ close all
 
 p=0;
 % figure
-
-for K=8500:8505
+for K=9635:9640
     num=[1 1]*K; 
     den=[1 9 6 24];
     sys1=tf(num,den);
@@ -17,8 +16,6 @@ for K=8500:8505
     p=p+1;
     s1=stepinfo(sys,'RiseTimeThreshold',[0.1 0.9]);
     risetime(p,:)=s1.RiseTime;
-    a(p,:)=K;
-    info=[risetime a];
 end
 
-disp(info)
+disp(risetime)
